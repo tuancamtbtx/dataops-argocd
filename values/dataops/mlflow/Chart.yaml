@@ -1,9 +1,9 @@
 apiVersion: v2
 name: mlflow
 
-version: 1.4.14
+version: 0.7.19
 
 dependencies:
   - name: mlflow
-    version: 1.4.14
-    repository: oci://registry-1.docker.io/bitnamicharts/mlflow
+    version: 0.7.19
+    repository: https://community-charts.github.io/helm-charts
