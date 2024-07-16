@@ -3,17 +3,14 @@ kind: Application
 metadata:
   name: airflow
   namespace: argocd
-  annotations:
-    notifications.argoproj.io/subscribe.slack: {{ .Values.spec.slackChannel }}
 spec:
   destination:
     namespace: airflow
-    server: {{ .Values.spec.destination.server }}
-  project: {{ .Values.spec.project }}
+    server: https://kubernetes.default.svc
+  project: default
   source:
-    path: values/{{ .Values.spec.destination.cluster }}/airflow
-    repoURL: {{ .Values.spec.source.repoURL }}
-    targetRevision: {{ .Values.spec.source.targetRevision }}
+    path: values/dataops/airflow
+    repoURL:https://github.com/tuancamtbtx/dataops-argocd
   syncPolicy:
     syncOptions:
       - CreateNamespace=true
