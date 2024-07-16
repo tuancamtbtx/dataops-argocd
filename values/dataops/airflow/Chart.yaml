@@ -7,6 +7,6 @@ type: application
 version: 1.14.0
 
 dependencies:
-  - name: apache-airflow
+  - name: airflow
     version: 1.14.0
-    repository: https://airflow-helm.github.io/charts/
+    repository: https://airflow.apache.org/
