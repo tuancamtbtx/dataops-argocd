@@ -2,10 +2,4 @@ images:
   airflow:
     repository: apache/airflow
     tag: latest
-
 executor: "KubernetesExecutor"
-env:
-  - name: AIRFLOW__WEBSERVER__INSTANCE_NAME
-    value: 'Airflow -Tutorial'
-  - name: AIRFLOW__CORE__DEFAULT_TIMEZONE
-    value: 'Asia/Ho_Chi_Minh'
