@@ -1,0 +1,9 @@
+apiVersion: v2
+name: mlflow
+
+version: 1.4.14
+
+dependencies:
+  - name: mlflow
+    version: 1.4.14
+    repository: oci://registry-1.docker.io/bitnamicharts/mlflow

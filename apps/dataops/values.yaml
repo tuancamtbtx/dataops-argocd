@@ -1,0 +1,9 @@
+spec:
+  project: default
+  destination:
+    server: https://kubernetes.default.svc
+    cluster: dataops
+  source:
+    repoURL: https://github.com/tuancamtbtx/dataops-argocd.git
+    targetRevision: main
+  syncPolicy: {}
