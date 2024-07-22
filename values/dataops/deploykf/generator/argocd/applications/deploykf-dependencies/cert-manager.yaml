@@ -19,7 +19,7 @@ spec:
   source:
     repoURL: "https://github.com/tuancamtbtx/dataops-argocd"
     targetRevision: "main"
-    path: "GENERATOR_OUTPUT/manifests/deploykf-dependencies/cert-manager"
+    path: "generator/manifests/deploykf-dependencies/cert-manager"
     helm:
       ignoreMissingValueFiles: true
       valueFiles:

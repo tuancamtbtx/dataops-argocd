@@ -19,7 +19,7 @@ spec:
   source:
     repoURL: "https://github.com/tuancamtbtx/dataops-argocd"
     targetRevision: "main"
-    path: "GENERATOR_OUTPUT/manifests/deploykf-core/deploykf-istio-gateway"
+    path: "generator/manifests/deploykf-core/deploykf-istio-gateway"
     helm:
       ignoreMissingValueFiles: true
       valueFiles:

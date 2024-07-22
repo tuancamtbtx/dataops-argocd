@@ -18,7 +18,7 @@ spec:
   source:
     repoURL: "https://github.com/tuancamtbtx/dataops-argocd"
     targetRevision: "main"
-    path: "GENERATOR_OUTPUT/manifests/kubeflow-tools/katib"
+    path: "generator/manifests/kubeflow-tools/katib"
   destination:
     server: "https://kubernetes.default.svc"
     namespace: kubeflow

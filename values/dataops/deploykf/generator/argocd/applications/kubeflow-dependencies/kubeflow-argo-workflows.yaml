@@ -18,7 +18,7 @@ spec:
   source:
     repoURL: "https://github.com/tuancamtbtx/dataops-argocd"
     targetRevision: "main"
-    path: "GENERATOR_OUTPUT/manifests/kubeflow-dependencies/kubeflow-argo-workflows"
+    path: "generator/manifests/kubeflow-dependencies/kubeflow-argo-workflows"
     helm:
       ignoreMissingValueFiles: true
       valueFiles:

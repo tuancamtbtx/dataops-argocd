@@ -18,7 +18,7 @@ spec:
   source:
     repoURL: "https://github.com/tuancamtbtx/dataops-argocd"
     targetRevision: "main"
-    path: "GENERATOR_OUTPUT/manifests/deploykf-opt/deploykf-minio"
+    path: "generator/manifests/deploykf-opt/deploykf-minio"
     helm:
       ignoreMissingValueFiles: true
       valueFiles:

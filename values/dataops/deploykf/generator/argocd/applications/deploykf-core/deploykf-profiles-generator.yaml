@@ -19,7 +19,7 @@ spec:
   source:
     repoURL: "https://github.com/tuancamtbtx/dataops-argocd"
     targetRevision: "main"
-    path: "GENERATOR_OUTPUT/manifests/deploykf-core/deploykf-profiles-generator"
+    path: "generator/manifests/deploykf-core/deploykf-profiles-generator"
     helm:
       ignoreMissingValueFiles: true
       valueFiles:
