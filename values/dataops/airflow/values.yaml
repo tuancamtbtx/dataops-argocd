@@ -1,11 +1,3 @@
-executor: "KubernetesExecutor"
-image:
-  airflow:
-    repository: vantuan12345/airlake:v1.0.0
-    tag: latest
-    ## WARNING: even if set to "Always" DO NOT reuse tag names, 
-    ##          containers only pull the latest image when restarting
-    pullPolicy: IfNotPresent
 migrateDatabaseJob:
   useHelmHooks: false
   applyCustomEnv: false
