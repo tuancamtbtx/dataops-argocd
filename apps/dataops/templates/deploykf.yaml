@@ -1,0 +1,28 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: deploykf
+  namespace: argocd
+  labels:
+    app.kubernetes.io/name: deploykf
+    app.kubernetes.io/part-of: deploykf
+spec:
+  destination:
+    namespace: argocd
+    server: https://kubernetes.default.svc
+  project: default
+  source:
+    repoURL: https://github.com/tuancamtbtx/dataops-argocd
+    targetRevision: main
+    path: values/dataops/deploykf
+    plugin:
+      name: "deploykf"
+      parameters:
+        - name: "source_path"
+          string: "./generator"
+        - name: "values_files"
+          array:
+            - "./values.yaml"
+            - "./values-overrides.yaml"
+  syncPolicy:
+    syncOptions:

@@ -10,7 +10,7 @@ spec:
   project: default
   source:
     path: values/dataops/mlflow
-    repoURL:https://github.com/tuancamtbtx/dataops-argocd
+    repoURL: https://github.com/tuancamtbtx/dataops-argocd
   syncPolicy:
     syncOptions:
       - CreateNamespace=true

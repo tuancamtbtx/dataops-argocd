@@ -127,9 +127,9 @@ deploykf_core:
 
       ## the default access for members of profiles, when not explicitly specified
       ##
-      #memberAccess:
-      #  role: view
-      #  notebooksAccess: false
+      memberAccess:
+       role: view
+       notebooksAccess: false
 
       ## the default list of plugins for profiles, when not explicitly specified
       ##  - you may override these defaults for a specific profile definition
@@ -161,39 +161,37 @@ deploykf_core:
     ## user entities
     ##  - https://www.deploykf.org/guides/platform/deploykf-profiles/#user-entities
     ##
-    #users:
-    #  - id: user-1
-    #    email: "user1@example.com"
-    #  - id: user-2
-    #    email: "user2@example.com"
+    users:
+     - id: tuancamtbtx
+       email: "nguyenvantuan140397@gmail.com"
+     - id: user-2
+       email: "user2@example.com"
 
     ## group entities
     ##  - https://www.deploykf.org/guides/platform/deploykf-profiles/#group-entities
     ##
-    #groups:
-    #  - id: team-1
-    #    users:
-    #      - user-1
-    #      - user-2
+    groups:
+     - id: admin
+       users:
+         - tuancamtbtx
+     - id: ds
+        users:
+          - user-2
 
     ## profile definitions
     ##  - https://www.deploykf.org/guides/platform/deploykf-profiles/#profile-definitions
     ##
-    #profiles:
-    #  - name: team-1
-    #    members:
-    #      - group: team-1
-    #        access:
-    #          role: edit
-    #          notebooksAccess: true
-    #
-    #  - name: team-1-prod
-    #    members:
-    #      - group: team-1
-    #        access:
-    #          role: view
-    #          notebooksAccess: false
-
+    profiles:
+     - name: team-1
+       members:
+         - group: admin
+           access:
+             role: edit
+             notebooksAccess: true
+         - group: ds
+           access:
+             role: edit
+             notebooksAccess: true
 ## --------------------------------------------------------------------------------
 ##                                   deploykf-opt
 ## --------------------------------------------------------------------------------
