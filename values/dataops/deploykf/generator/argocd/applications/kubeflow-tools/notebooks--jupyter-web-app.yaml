@@ -18,7 +18,7 @@ spec:
   source:
     repoURL: "https://github.com/tuancamtbtx/dataops-argocd"
     targetRevision: "main"
-    path: "generator/manifests/kubeflow-tools/notebooks/jupyter-web-app"
+    path: "values/dataops/deploykf/generator/manifests/kubeflow-tools/notebooks/jupyter-web-app"
   destination:
     server: "https://kubernetes.default.svc"
     namespace: kubeflow

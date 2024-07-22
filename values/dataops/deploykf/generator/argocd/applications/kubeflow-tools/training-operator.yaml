@@ -18,7 +18,7 @@ spec:
   source:
     repoURL: "https://github.com/tuancamtbtx/dataops-argocd"
     targetRevision: "main"
-    path: "generator/manifests/kubeflow-tools/training-operator"
+    path: "values/dataops/deploykf/generator/manifests/kubeflow-tools/training-operator"
   destination:
     server: "https://kubernetes.default.svc"
     namespace: kubeflow

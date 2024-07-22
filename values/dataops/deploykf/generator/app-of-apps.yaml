@@ -12,7 +12,7 @@ spec:
   source:
     repoURL: "https://github.com/tuancamtbtx/dataops-argocd"
     targetRevision: "main"
-    path: "generator/argocd"
+    path: "values/dataops/deploykf/generator/argocd"
   destination:
     ## NOTE: even if the internal apps target a remote cluster, the apps themselves should be in the Argo CD cluster
     server: "https://kubernetes.default.svc"

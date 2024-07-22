@@ -18,7 +18,7 @@ spec:
   source:
     repoURL: "https://github.com/tuancamtbtx/dataops-argocd"
     targetRevision: "main"
-    path: "generator/manifests/deploykf-core/deploykf-dashboard"
+    path: "values/dataops/deploykf/generator/manifests/deploykf-core/deploykf-dashboard"
     helm:
       ignoreMissingValueFiles: true
       valueFiles:

@@ -19,7 +19,7 @@ spec:
   source:
     repoURL: "https://github.com/tuancamtbtx/dataops-argocd"
     targetRevision: "main"
-    path: "generator/manifests/deploykf-dependencies/kyverno"
+    path: "values/dataops/deploykf/generator/manifests/deploykf-dependencies/kyverno"
     helm:
       ignoreMissingValueFiles: true
       valueFiles:
