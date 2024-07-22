@@ -6,11 +6,19 @@ image:
     ## WARNING: even if set to "Always" DO NOT reuse tag names, 
     ##          containers only pull the latest image when restarting
     pullPolicy: IfNotPresent
-createUserJob:
-  useHelmHooks: false
-  applyCustomEnv: false
 migrateDatabaseJob:
   useHelmHooks: false
   applyCustomEnv: false
-  jobAnnotations:
-        "argocd.argoproj.io/hook": Sync
+  enabled: true
+  # Limit the lifetime of the job object after it finished execution.
+  ttlSecondsAfterFinished: 300
+  # Command to use when running the migrate database job (templated).
+  command: ~
+  # Args to use when running the migrate database job (templated).
+  args:
+    - "bash"
+    - "-c"
+    # The format below is necessary to get `helm lint` happy
+    - |-
+      exec \
+      airflow {{ semverCompare ">=2.0.0" .Values.airflowVersion | ternary "db upgrade" "upgradedb" }}
