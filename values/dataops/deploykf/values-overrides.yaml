@@ -74,7 +74,10 @@ deploykf_core:
       ##  - https://www.deploykf.org/guides/platform/deploykf-authentication/#static-userpassword-combinations
       ##  - there are default static passwords, set this to an empty list to disable them
       ##
-      #staticPasswords: []
+      staticPasswords: 
+        - email: "admin@example.com"
+          password:
+            value: "password"
 
       ## dex connectors
       ##  - https://www.deploykf.org/guides/platform/deploykf-authentication/#external-identity-providers
@@ -127,9 +130,9 @@ deploykf_core:
 
       ## the default access for members of profiles, when not explicitly specified
       ##
-      memberAccess:
-       role: view
-       notebooksAccess: false
+      #memberAccess:
+      #  role: view
+      #  notebooksAccess: false
 
       ## the default list of plugins for profiles, when not explicitly specified
       ##  - you may override these defaults for a specific profile definition
@@ -162,10 +165,10 @@ deploykf_core:
     ##  - https://www.deploykf.org/guides/platform/deploykf-profiles/#user-entities
     ##
     users:
-     - id: tuancamtbtx
-       email: "nguyenvantuan140397@gmail.com"
-     - id: user-2
-       email: "user2@example.com"
+     - id: user-1
+       email: "admin@example.com"
+    #  - id: user-2
+    #    email: "user2@example.com"
 
     ## group entities
     ##  - https://www.deploykf.org/guides/platform/deploykf-profiles/#group-entities
@@ -173,25 +176,26 @@ deploykf_core:
     groups:
      - id: admin
        users:
-         - tuancamtbtx
-     - id: ds
-        users:
-          - user-2
+         - user-1
 
     ## profile definitions
     ##  - https://www.deploykf.org/guides/platform/deploykf-profiles/#profile-definitions
     ##
     profiles:
-     - name: team-1
+     - name: test
        members:
          - group: admin
            access:
              role: edit
              notebooksAccess: true
-         - group: ds
-           access:
-             role: edit
-             notebooksAccess: true
+    #
+    #  - name: team-1-prod
+    #    members:
+    #      - group: team-1
+    #        access:
+    #          role: view
+    #          notebooksAccess: false
+
 ## --------------------------------------------------------------------------------
 ##                                   deploykf-opt
 ## --------------------------------------------------------------------------------
