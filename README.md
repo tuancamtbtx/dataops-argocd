@@ -3,7 +3,7 @@
 ![Datadog](https://img.shields.io/badge/datadog-%23632CA6.svg?style=for-the-badge&logo=datadog&logoColor=white)
 ![Terraform](https://img.shields.io/badge/terraform-%235835CC.svg?style=for-the-badge&logo=terraform&logoColor=white)
 ## Overview
-In the context of Trusting Social DataOps, using tools like Terraform, GKE (Google Kubernetes Engine), Helm, and ArgoCD suggests a modern, cloud-native approach to managing infrastructure and deploying applications. Let's break down the components you mentioned:
+In the context of DataOps, using tools like Terraform, GKE (Google Kubernetes Engine), Helm, and ArgoCD suggests a modern, cloud-native approach to managing infrastructure and deploying applications. Let's break down the components you mentioned:
 
 
 ### Terraform
