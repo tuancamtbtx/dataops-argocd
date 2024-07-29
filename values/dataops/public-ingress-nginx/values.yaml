@@ -1,0 +1,55 @@
+ingress-nginx:
+  fullnameOverride: public-ingress-nginx
+  controller:
+    enableAnnotationValidations: true
+    replicaCount: 1
+    minAvailable: 1
+    config:
+      enable-underscores-in-headers: "true"
+      annotation-value-word-blocklist: "load_module,lua_package,_by_lua,root,serviceaccount" # more detail https://github.com/kubernetes/ingress-nginx/issues/7837
+      allow-snippet-annotations: 'true'
+      generate-request-id: "false"
+      http-snippet: |-
+        server {
+            server_name _ ;
+            listen 80  ;
+            listen [::]:80  ;
+            listen 443  ssl http2 ;
+            listen [::]:443  ssl http2 ;
+          location /nginx_status {
+            allow 10.0.0.0/16;
+            allow 172.16.0.0/12;
+            allow 192.168.0.0/16;
+            allow 100.64.0.0/10;
+            deny all;
+            stub_status on;
+            access_log off;
+          }
+        }
+      hsts: true
+      hsts-include-subdomains: true
+      hsts-max-age: 63072000
+      hsts-preload: true
+      log-format-escape-json: "true"
+      compute-full-forwarded-for: true
+      use-forwarded-headers: true
+      enable-real-ip: true
+      log-format-upstream: '{"http.url":"$request_uri","http.version":"$server_protocol","http.status_code":$status,"http.method":"$request_method","http.referer":"$http_referer","http.useragent":"$http_user_agent","time_local":"$time_local","network.client.ip":"$remote_addr","request":"$request","duration_sec":$request_time,"network.bytes_read":$request_length,"ssl_protocol":"$ssl_protocol","ssl_cipher":"$ssl_cipher","upstream_response_time":$upstream_response_time,"upstream_addr":"$upstream_addr","upstream_status":$upstream_status,"body_bytes_sent":$body_bytes_sent,"http.host":"$host","http_x_forwarded_for":"$http_x_forwarded_for","namespace":"$namespace","ingress_name":"$ingress_name","service_name":"$service_name","service_port":$service_port,"http.request_id":"$req_id","network.bytes_written":$bytes_sent,"upstream_bytes_sent":$upstream_bytes_sent}'
+    kind: Deployment
+    resources:
+      requests:
+        cpu: 100m
+        memory: 128Mi
+    ingressClass: nginx # For backwards compatibility with ingress.class annotation.
+    ingressClassResource:
+      name: nginx
+      default: true
+      controllerValue: "k8s.io/ingress-nginx"
+    service:
+      external:
+        enabled: true
+      externalTrafficPolicy: "Local"
+      internal:
+        enabled: false
+      loadBalancerIP: "35.186.151.25"
+    electionID: ingress-controller-leader
