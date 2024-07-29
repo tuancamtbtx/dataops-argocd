@@ -2,7 +2,7 @@ airflow:
   executor: "KubernetesExecutor"
   images:
     airflow:
-      repository: apache/airflow
+      repository: vantuan12345/airlake
       # tag: v1.0.0 
       pullPolicy: Always
     createUserJob:
