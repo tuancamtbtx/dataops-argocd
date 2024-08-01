@@ -11,3 +11,9 @@ airflow:
     migrateDatabaseJob:
       useHelmHooks: false
       applyCustomEnv: false
+  gitSync:
+    enabled: false
+    image:
+      repository: k8s.gcr.io/git-sync
+      tag: v3.1.1
+      pullPolicy: IfNotPresent
